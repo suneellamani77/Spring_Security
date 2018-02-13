@@ -7,6 +7,13 @@
 </head>
 <body onload='document.f.username.focus();'>
 	<h3>Login with Username and Password</h3>
+	
+	<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+      <font color="red">
+	invalid username or password
+      </font>
+    </c:if>
+	
 	<form name='f' action='/Spring_Ldap/login' method='POST'>
 		<table>
 			<tr>

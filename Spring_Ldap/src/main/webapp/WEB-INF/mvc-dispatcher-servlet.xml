@@ -72,6 +72,10 @@
 
 	</bean>
 	
+	<bean id="customAuthProvider" class="com.sj.ldap.Provider.AuthProvider">
+	
+	</bean>
+	<security:global-method-security pre-post-annotations="enabled" />
 	
  
 </beans>
