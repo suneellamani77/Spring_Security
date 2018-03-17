@@ -44,7 +44,7 @@
 	<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
 		id="sessionFactory" primary="true">
 		<property name="dataSource" ref="dataSource"></property>
-		<!-- <property name="packagesToScan" value="com.sj.test.dto"></property> -->
+		<property name="packagesToScan" value="com.sj.ldap.entity"></property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -58,7 +58,7 @@
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		id="dataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/dharma"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/sec"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>
 

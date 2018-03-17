@@ -15,6 +15,9 @@
 	 						default-target-url='/index11.html'
 	 						
 	 						always-use-default-target='true'/>
+	 		<security:access-denied-handler
+			error-page="/403.html" />
+	 						
 	 		<security:logout logout-success-url="/logout.html" />
       
       </security:http>

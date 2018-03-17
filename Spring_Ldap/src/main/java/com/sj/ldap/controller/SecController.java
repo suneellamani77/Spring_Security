@@ -5,6 +5,7 @@ import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class SecController {
 	}
 
 	@RequestMapping(value="/home")
+	@PreAuthorize("hasRole('home_view_Y')")
 	public ModelAndView home(){
 		return new ModelAndView("home");
 	}
@@ -51,6 +53,13 @@ public class SecController {
 		
 	}
 	
+	
+	@RequestMapping(value="/403")
+	public ModelAndView accessDenied(){
+		System.err.println("access denied");
+		
+		return new ModelAndView("403");
+	}
 	
 	
 	
