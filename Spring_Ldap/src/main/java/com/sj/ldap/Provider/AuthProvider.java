@@ -53,7 +53,7 @@ public class AuthProvider implements AuthenticationProvider{
         			String authority="ROLE_"+url+"_view_Y";
         			grant.add(new SimpleGrantedAuthority(authority));
         			
-        			/*if(perm.getCreate()==true){
+        			if(perm.getCreate()==true){
         				 authority="ROLE_"+url+"_create_Y";
         				 grant.add(new SimpleGrantedAuthority(authority));
         			}
@@ -61,7 +61,23 @@ public class AuthProvider implements AuthenticationProvider{
         			if(perm.getEditAny()==true){
         				authority="ROLE_"+url+"_editAny_Y";
         				grant.add(new SimpleGrantedAuthority(authority));
-        			}*/
+        			}
+        			
+        			if(perm.getEditOwn()==true){
+        				authority="ROLE_"+url+"_editOwn_Y";
+        				grant.add(new SimpleGrantedAuthority(authority));
+        			}
+        			
+        			if(perm.getDeleteAny()==true){
+        				authority="ROLE_"+url+"_deleteAny_Y";
+        				grant.add(new SimpleGrantedAuthority(authority));
+        			}
+        			
+        			if(perm.getDeleteOwn()==true){
+        				authority="ROLE_"+url+"_deleteOwn_Y";
+        				grant.add(new SimpleGrantedAuthority(authority));
+        			}
+        			
         			
         		}
         		

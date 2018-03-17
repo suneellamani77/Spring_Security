@@ -1,3 +1,5 @@
+
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +48,10 @@ display: inline-block;
     </a>
     </div> --%>
     <ul class="nav navbar-nav">
+    
+    <sec:authorize access="hasRole('ROLE_home_editAny_Y')">
       <li class="active"><a href="#">Home</a></li>
+      </sec:authorize>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
         <ul class="dropdown-menu" >
           <li><a href="#">BilledUnbilledDataSave</a></li>
